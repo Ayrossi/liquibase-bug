@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - logicalFilePath: BOOT-INF/classes/db/changelog/changes/db.changelog-master.yaml
+  - preConditions:
+      - or:
+          - dbms:
+              type: h2
+          - dbms:
+              type: postgresql
+  - includeAll:
+      path: db/changelog/changes/

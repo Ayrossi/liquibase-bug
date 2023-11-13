@@ -1,0 +1,82 @@
+databaseChangeLog:
+  - logicalFilePath: BOOT-INF/classes/db/changelog/changes/1.0.0-create tables.yml
+  - changeSet:
+      id: 1.0.0
+      author: Ayoub Rossi
+      remarks: Initialize database with tables creation
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: PK_CODE_ID
+              - column:
+                  name: CREATED_BY
+                  type: VARCHAR(50)
+              - column:
+                  name: CREATED_DATE
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: MODIFIED_BY
+                  type: VARCHAR(50)
+              - column:
+                  name: MODIFIED_DATE
+                  type: TIMESTAMP
+              - column:
+                  name: REFERENCE
+                  type: VARCHAR(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: DESCRIPTION_FR
+                  type: VARCHAR(1000)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: DESCRIPTION_NL
+                  type: VARCHAR(1000)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: LONG_DESCRIPTION_FR
+                  type: VARCHAR(5000)
+              - column:
+                  name: LONG_DESCRIPTION_NL
+                  type: VARCHAR(5000)
+              - column:
+                  name: CONTEXT
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: PROJECT
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: PROFILE
+                  type: VARCHAR(1000)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: AMOUNT_PATIENT
+                  type: NUMBER
+                  defaultValueNumeric: 0
+              - column:
+                  name: AMOUNT_PROFILE
+                  type: NUMBER
+                  defaultValueNumeric: 0
+              - column:
+                  name: VALIDITY_FROM
+                  type: DATE
+              - column:
+                  name: VALIDITY_TO
+                  type: DATE
+            tableName: CODE
+
